@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\GejalaModel;
 use Illuminate\Http\Request;
+use App\Models\RelasiModel;
 
 class GejalaController extends Controller
 {
@@ -69,15 +70,23 @@ class GejalaController extends Controller
     public function destroyG($id)
     {
         $gejala = GejalaModel::find($id);
-
+    
         if (!$gejala) {
             return redirect()->route('gejala.index')->with('error', 'Data gejala tidak ditemukan');
         }
-
+    
+        // Periksa apakah gejala terhubung dengan relasi mana pun
+        $relasiCount = RelasiModel::where('id_gejala', $id)->count();
+    
+        if ($relasiCount > 0) {
+            return redirect()->route('gejala.index')->with('error', 'Gagal menghapus data gejala karena masih terhubung dengan relasi');
+        }
+    
         if ($gejala->delete()) {
             return redirect()->route('gejala.index')->with('success', 'Data gejala berhasil dihapus');
         } else {
             return redirect()->route('gejala.index')->with('error', 'Gagal menghapus data gejala');
         }
     }
+    
 }

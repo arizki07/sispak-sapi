@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\PenyakitModel;
+use App\Models\RelasiModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -86,6 +87,12 @@ class PenyakitController extends Controller
 
         if (!$penyakits) {
             return redirect()->route('penyakit.index')->with('error', 'Data penyakit tidak ditemukan');
+        }
+
+        $relasiCount = RelasiModel::where('id_penyakit', $id)->count();
+
+        if($relasiCount > 0) {
+            return redirect()->route('penyakit.index')->with('error', 'Gagal menghapus data penyakit karena masih terhubung dengan relasi');
         }
 
         if ($penyakits->delete()) {

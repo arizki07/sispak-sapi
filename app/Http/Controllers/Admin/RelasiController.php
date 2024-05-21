@@ -70,7 +70,7 @@ class RelasiController extends Controller
     {
         $request->validate([
             'id_gejala' => 'required',
-            'id_penyakit' => 'required',
+            'id_penyakit' => 'required', 
             'mb' => 'required',
             'md' => 'required',
             'cf' => 'required',
@@ -90,7 +90,7 @@ class RelasiController extends Controller
             ->where('id_penyakit', $idPenyakit)
             ->where('id_relasi', '!=', $id) // Hindari membandingkan relasi dengan dirinya sendiri
             ->first();
-        if ($duplicateRelasi) {
+        if ($duplicateRelasi) {     
             return redirect()->back()->with('error', 'ID gejala dan ID penyakit sudah ada dalam relasi yang sama.');
         }
 
