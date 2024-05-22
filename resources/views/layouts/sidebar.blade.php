@@ -4,7 +4,7 @@
             aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <h1 class="navbar-brand navbar-brand-autodark">
+        <h1 class="navbar-brand navbar-brand-autodark pt-3 pb-3">
             <a href=".">
                 <img src="assets/static/logo-small.svg" width="110" height="32" alt="Tabler"
                     class="navbar-brand-image">
@@ -190,7 +190,7 @@
                     <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)"></span>
                     <div class="d-none d-xl-block ps-2">
                         <div>Paweł Kuna</div>
-                        <div class="mt-1 small text-secondary">UI Designer</div>
+                        <div class="mt-2 small text-secondary">UI Designer</div>
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -223,7 +223,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="nav-item {{ $active == 'Penyakit' ? 'active' : '' }}">
+                <li class="nav-item mt-2 {{ $active == 'Penyakit' ? 'active' : '' }}">
                     <a class="nav-link" href="/penyakit">
                         <span
                             class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
@@ -246,7 +246,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="nav-item {{ $active == 'Gejala' ? 'active' : '' }}">
+                <li class="nav-item mt-2 {{ $active == 'Gejala' ? 'active' : '' }}">
                     <a class="nav-link" href="/gejala">
                         <span
                             class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
@@ -269,7 +269,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="nav-item {{ $active == 'Relasi' ? 'active' : '' }}">
+                <li class="nav-item mt-2 {{ $active == 'Relasi' ? 'active' : '' }}">
                     <a class="nav-link" href="/relasi">
                         <span
                             class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
@@ -288,7 +288,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="nav-item {{ $active == 'Diagnosa' ? 'active' : '' }}">
+                <li class="nav-item mt-2 pb-3 {{ $active == 'Diagnosa' ? 'active' : '' }}">
                     <a class="nav-link" href="/diagnosa">
                         <span
                             class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->

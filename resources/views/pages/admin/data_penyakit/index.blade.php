@@ -117,61 +117,63 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <table id="example"
-                                        class="display table table-vcenter card-table table-sm table-bordered table-hover text-nowrap"
-                                        style="width:100%; font-family: 'Trebuchet MS', Helvetica, sans-serif;">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center">Opsi</th>
-                                                <th class="text-center">Nama Penyakit</th>
-                                                <th class="text-center">Kode Penyakit</th>
-                                                <th class="text-center">Deksripsi</th>
-                                                <th class="text-center">Solusi Penyakit</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($penyakit as $item)
-                                                <tr class="text-center">
-                                                    <td>
-                                                        <a href="javascript:void(0)"
-                                                            data-bs-target="#modal-edit{{ $item->id_penyakit }}"
-                                                            data-bs-toggle="modal"
-                                                            class="btn btn-outline-info btn-sm btn-icon edit-btn"><i
-                                                                class="fa-solid fa-fw fa-edit"></i>
-                                                        </a>
-                                                        <form id="deleteForm{{ $item->id_penyakit }}"
-                                                            action="/destroy/penyakit/{{ $item->id_penyakit }}" method="POST"
-                                                            class="d-inline">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="button"
-                                                                class="btn btn-outline-danger btn-sm btn-icon"
-                                                                onclick="confirmDelete(event, {{ $item->id_penyakit }})">
-                                                                <i class="fa-solid fa-fw fa-trash-can"></i>
-                                                            </button>
-                                                        </form>
-
-                                                    </td>
-                                                    <td>{{ $item->nama_penyakit }}</td>
-                                                    <td>{{ $item->kode_penyakit }}</td>
-                                                    {{-- <td>{{ $item->deskripsi }}</td> --}}
-                                                    <td>
-                                                        <a type="button" href="#" class="btn btn-outline-primary btn-sm btn-icon" data-bs-toggle="modal"
-                                                        data-bs-target="#deskripsi-{{ $item->id_penyakit }}">
-                                                            <i class="fa-solid fa-fw fa-eye"></i>
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <a type="button" href="#" class="btn btn-outline-primary btn-sm btn-icon" data-bs-toggle="modal"
-                                                        data-bs-target="#solusi-{{ $item->id_penyakit }}">
-                                                            <i class="fa-solid fa-fw fa-eye"></i>
-                                                        </a>
-                                                    </td>
-                                                    {{-- <td>{{ $item->solusi_penyakit }}</td> --}}
+                                    <div style="overflow-x: auto;">
+                                        <table id="example"
+                                            class="display table table-vcenter card-table table-sm table-bordered table-hover"
+                                            style="width:100%; font-family: 'Trebuchet MS', Helvetica, sans-serif;">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">Opsi</th>
+                                                    <th class="text-center">Nama Penyakit</th>
+                                                    <th class="text-center">Kode Penyakit</th>
+                                                    <th class="text-center">Deksripsi</th>
+                                                    <th class="text-center">Solusi Penyakit</th>
                                                 </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($penyakit as $item)
+                                                    <tr class="text-center">
+                                                        <td>
+                                                            <a href="javascript:void(0)"
+                                                                data-bs-target="#modal-edit{{ $item->id_penyakit }}"
+                                                                data-bs-toggle="modal"
+                                                                class="btn btn-outline-info btn-sm btn-icon edit-btn"><i
+                                                                    class="fa-solid fa-fw fa-edit"></i>
+                                                            </a>
+                                                            <form id="deleteForm{{ $item->id_penyakit }}"
+                                                                action="/destroy/penyakit/{{ $item->id_penyakit }}" method="POST"
+                                                                class="d-inline">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="button"
+                                                                    class="btn btn-outline-danger btn-sm btn-icon"
+                                                                    onclick="confirmDelete(event, {{ $item->id_penyakit }})">
+                                                                    <i class="fa-solid fa-fw fa-trash-can"></i>
+                                                                </button>
+                                                            </form>
+
+                                                        </td>
+                                                        <td>{{ $item->nama_penyakit }}</td>
+                                                        <td>{{ $item->kode_penyakit }}</td>
+                                                        {{-- <td>{{ $item->deskripsi }}</td> --}}
+                                                        <td>
+                                                            <a type="button" href="#" class="btn btn-outline-primary btn-sm btn-icon" data-bs-toggle="modal"
+                                                            data-bs-target="#deskripsi-{{ $item->id_penyakit }}">
+                                                                <i class="fa-solid fa-fw fa-eye"></i>
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a type="button" href="#" class="btn btn-outline-primary btn-sm btn-icon" data-bs-toggle="modal"
+                                                            data-bs-target="#solusi-{{ $item->id_penyakit }}">
+                                                                <i class="fa-solid fa-fw fa-eye"></i>
+                                                            </a>
+                                                        </td>
+                                                        {{-- <td>{{ $item->solusi_penyakit }}</td> --}}
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>

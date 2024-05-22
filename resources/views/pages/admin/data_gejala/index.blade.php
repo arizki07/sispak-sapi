@@ -60,25 +60,24 @@
                                 {{ $judul }}
 
                             </h2>
-                            <div class="page-pretitle">
+                            <div class="page-pretitle mt-2">
                                 <ol class="breadcrumb" aria-label="breadcrumbs">
                                     <li class="breadcrumb-item"><a href="{{ url('dashboard') }}"><i class="fa fa-home"></i>
                                             Dashboard</a></li>
                                     <li class="breadcrumb-item active" aria-current="page"><a href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="icon icon-tabler icon-tabler-polygon" width="44" height="44"
-                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
+                                            {{-- <svg xmlns="http://www.w3.org/2000/svg"
+                                                class="icon icon-tabler icon-tabler-brand-snowflake" width="44"
+                                                height="41" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <path d="M12 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                                                <path d="M19 8m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                                                <path d="M5 11m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                                                <path d="M15 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                                                <path d="M6.5 9.5l3.5 -3" />
-                                                <path d="M14 5.5l3 1.5" />
-                                                <path d="M18.5 10l-2.5 7" />
-                                                <path d="M13.5 17.5l-7 -5" />
-                                            </svg>
+                                                <path d="M14 21v-5.5l4.5 2.5" />
+                                                <path d="M10 21v-5.5l-4.5 2.5" />
+                                                <path d="M3.5 14.5l4.5 -2.5l-4.5 -2.5" />
+                                                <path d="M20.5 9.5l-4.5 2.5l4.5 2.5" />
+                                                <path d="M10 3v5.5l-4.5 -2.5" />
+                                                <path d="M14 3v5.5l4.5 -2.5" />
+                                                <path d="M12 11l1 1l-1 1l-1 -1z" />
+                                            </svg> --}}
                                             {{ $judul }}
                                         </a>
                                     </li>
@@ -100,44 +99,48 @@
                                         <i class="fa-solid fa-users"></i>
                                     </div>
                                 </div>
-                                <table style="width:100%; font-family: 'Trebuchet MS', Helvetica, sans-serif;"
-                                    class="display table table-vcenter card-table table-sm table-bordered table-hover text-nowrap datatable-users"
-                                    id="example">
-                                    <thead>
-                                        <tr class="text-center">
-                                            <th>Opsi</th>
-                                            <th>Nama Gejala</th>
-                                            <th>Kode Gejala</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($gejala as $item)
-                                            <tr class="text-center">
-                                                <td>
-                                                    <a href="javascript:void(0)"
-                                                        data-bs-target="#modal-edit{{ $item->id_gejala }}"
-                                                        data-bs-toggle="modal"
-                                                        class="btn btn-outline-info btn-sm btn-icon edit-btn"><i
-                                                            class="fa-solid fa-fw fa-edit"></i>
-                                                    </a>
-                                                    <form id="deleteForm{{ $item->id_gejala }}"
-                                                        action="/destroy/gejala/{{ $item->id_gejala }}" method="POST"
-                                                        class="d-inline">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="button"
-                                                            class="btn btn-outline-danger btn-sm btn-icon"
-                                                            onclick="confirmDelete(event, {{ $item->id_gejala }})">
-                                                            <i class="fa-solid fa-fw fa-trash-can"></i>
-                                                        </button>
-                                                    </form>
-                                                </td>
-                                                <td>{{ $item->nama_gejala }}</td>
-                                                <td>{{ $item->kode_gejala }}</td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                    <div class="card-body">
+                                        <div style="overflow-x: auto;">
+                                            <table style="width:100%; font-family: 'Trebuchet MS', Helvetica, sans-serif;"
+                                                class="display table table-vcenter card-table table-sm table-bordered table-hover datatable-users"
+                                                id="example">
+                                                <thead>
+                                                    <tr class="text-center">
+                                                        <th class="text-center">Opsi</th>
+                                                        <th class="text-center">Nama Gejala</th>
+                                                        <th class="text-center">Kode Gejala</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach ($gejala as $item)
+                                                        <tr class="text-center">
+                                                            <td>
+                                                                <a href="javascript:void(0)"
+                                                                    data-bs-target="#modal-edit{{ $item->id_gejala }}"
+                                                                    data-bs-toggle="modal"
+                                                                    class="btn btn-outline-info btn-sm btn-icon edit-btn"><i
+                                                                        class="fa-solid fa-fw fa-edit"></i>
+                                                                </a>
+                                                                <form id="deleteForm{{ $item->id_gejala }}"
+                                                                    action="/destroy/gejala/{{ $item->id_gejala }}" method="POST"
+                                                                    class="d-inline">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-danger btn-sm btn-icon"
+                                                                        onclick="confirmDelete(event, {{ $item->id_gejala }})">
+                                                                        <i class="fa-solid fa-fw fa-trash-can"></i>
+                                                                    </button>
+                                                                </form>
+                                                            </td>
+                                                            <td>{{ $item->nama_gejala }}</td>
+                                                            <td>{{ $item->kode_gejala }}</td>
+                                                        </tr>
+                                                    @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-6">

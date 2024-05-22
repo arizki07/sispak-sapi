@@ -1,4 +1,4 @@
-<header class="navbar navbar-expand-md d-none d-lg-flex d-print-none">
+<header class="navbar navbar-expand-md d-none d-lg-flex d-print-none mt-2">
     <div class="container-xl">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu"
             aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@
                             d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
                     </svg>
                 </a>
-                <div class="nav-item dropdown d-none d-md-flex me-3">
+                {{-- <div class="nav-item dropdown d-none d-md-flex me-3">
                     <a href="" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1"
                         aria-label="Show notifications">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github-filled"
@@ -42,7 +42,7 @@
                         <span class="badge bg-red"></span>
                     </a>
 
-                </div>
+                </div> --}}
             </div>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"

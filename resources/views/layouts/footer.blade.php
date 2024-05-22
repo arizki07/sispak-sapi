@@ -3,14 +3,14 @@
         <div class="row text-center align-items-center flex-row-reverse">
             <div class="col-lg-auto ms-lg-auto">
                 <ul class="list-inline list-inline-dots mb-0">
-                    <li class="list-inline-item"><a href="https://tabler.io/docs" target="_blank" class="link-secondary"
-                            rel="noopener">Documentation</a></li>
-                    <li class="list-inline-item"><a href="./license.html" class="link-secondary">License</a>
+                    <li class="list-inline-item"><a href="#" class="link-secondary"
+                            rel="noopener">Sistem Pakar Diagnosis Hewan Sapi</a></li>
+                    {{-- <li class="list-inline-item"><a href="#" class="link-secondary">License</a>
                     </li>
-                    <li class="list-inline-item"><a href="https://github.com/tabler/tabler" target="_blank"
+                    <li class="list-inline-item"><a href="#"
                             class="link-secondary" rel="noopener">Source code</a></li>
                     <li class="list-inline-item">
-                        <a href="https://github.com/sponsors/codecalm" target="_blank" class="link-secondary"
+                        <a href="#" class="link-secondary"
                             rel="noopener">
                             <!-- Download SVG icon from http://tabler-icons.io/i/heart -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon text-pink icon-filled icon-inline"
@@ -22,21 +22,21 @@
                             </svg>
                             Sponsor
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
             <div class="col-12 col-lg-auto mt-3 mt-lg-0">
                 <ul class="list-inline list-inline-dots mb-0">
                     <li class="list-inline-item">
-                        Copyright &copy; 2023
-                        <a href="." class="link-secondary">Tabler</a>.
-                        All rights reserved.
+                        Copyright &copy; {{ date('Y') }}
+                        <a href="https://www.instagram.com/rifki_sebastian" target="_blank" class="link-secondary">Moch Rifki Sebastian</a>.
+                        {{-- All rights reserved. --}}
                     </li>
-                    <li class="list-inline-item">
-                        <a href="./changelog.html" class="link-secondary" rel="noopener">
-                            v1.0.0-beta20
+                    {{-- <li class="list-inline-item">
+                        <a href="#" class="link-secondary">
+                            <i>Sistem Pakar Diagnosis Penyakit Sapi</i>
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>
