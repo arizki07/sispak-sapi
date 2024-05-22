@@ -56,16 +56,15 @@
                                     <path d="M12 11l1 1l-1 1l-1 -1z" />
                                 </svg>
                                 {{ $judul }}
-
                             </h2>
-                            <div class="page-pretitle">
+                            <div class="page-pretitle mt-2">
                                 <ol class="breadcrumb" aria-label="breadcrumbs">
                                     <li class="breadcrumb-item"><a href="{{ url('dashboard') }}"><i class="fa fa-home"></i>
                                             Dashboard</a></li>
                                     <li class="breadcrumb-item active" aria-current="page"><a href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                            {{-- <svg xmlns="http://www.w3.org/2000/svg"
                                                 class="icon icon-tabler icon-tabler-brand-snowflake" width="44"
-                                                height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                height="41" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                                 fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                                 <path d="M14 21v-5.5l4.5 2.5" />
@@ -75,7 +74,7 @@
                                                 <path d="M10 3v5.5l-4.5 -2.5" />
                                                 <path d="M14 3v5.5l4.5 -2.5" />
                                                 <path d="M12 11l1 1l-1 1l-1 -1z" />
-                                            </svg>
+                                            </svg> --}}
                                             {{ $judul }}
                                         </a>
                                     </li>
@@ -117,49 +116,63 @@
                                         <i class="fa-solid fa-users"></i>
                                     </div>
                                 </div>
-                                <table id="example"
-                                    class="display table table-vcenter card-table table-sm table-bordered table-hover text-nowrap"
-                                    style="width:100%; font-family: 'Trebuchet MS', Helvetica, sans-serif;">
-                                    <thead>
-                                        <tr class="text-center">
-                                            <th>Opsi</th>
-                                            <th>Nama Penyakit</th>
-                                            <th>Kode Penyakit</th>
-                                            <th>Deksripsi</th>
-                                            <th>Solusi Penyakit</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($penyakit as $item)
-                                            <tr class="text-center">
-                                                <td>
-                                                    <a href="javascript:void(0)"
-                                                        data-bs-target="#modal-edit{{ $item->id_penyakit }}"
-                                                        data-bs-toggle="modal"
-                                                        class="btn btn-outline-info btn-sm btn-icon edit-btn"><i
-                                                            class="fa-solid fa-fw fa-edit"></i>
-                                                    </a>
-                                                    <form id="deleteForm{{ $item->id_penyakit }}"
-                                                        action="/destroy/penyakit/{{ $item->id_penyakit }}" method="POST"
-                                                        class="d-inline">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="button"
-                                                            class="btn btn-outline-danger btn-sm btn-icon"
-                                                            onclick="confirmDelete(event, {{ $item->id_penyakit }})">
-                                                            <i class="fa-solid fa-fw fa-trash-can"></i>
-                                                        </button>
-                                                    </form>
-
-                                                </td>
-                                                <td>{{ $item->nama_penyakit }}</td>
-                                                <td>{{ $item->kode_penyakit }}</td>
-                                                <td>{{ $item->deskripsi }}</td>
-                                                <td>{{ $item->solusi_penyakit }}</td>
+                                <div class="card-body">
+                                    <table id="example"
+                                        class="display table table-vcenter card-table table-sm table-bordered table-hover text-nowrap"
+                                        style="width:100%; font-family: 'Trebuchet MS', Helvetica, sans-serif;">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">Opsi</th>
+                                                <th class="text-center">Nama Penyakit</th>
+                                                <th class="text-center">Kode Penyakit</th>
+                                                <th class="text-center">Deksripsi</th>
+                                                <th class="text-center">Solusi Penyakit</th>
                                             </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($penyakit as $item)
+                                                <tr class="text-center">
+                                                    <td>
+                                                        <a href="javascript:void(0)"
+                                                            data-bs-target="#modal-edit{{ $item->id_penyakit }}"
+                                                            data-bs-toggle="modal"
+                                                            class="btn btn-outline-info btn-sm btn-icon edit-btn"><i
+                                                                class="fa-solid fa-fw fa-edit"></i>
+                                                        </a>
+                                                        <form id="deleteForm{{ $item->id_penyakit }}"
+                                                            action="/destroy/penyakit/{{ $item->id_penyakit }}" method="POST"
+                                                            class="d-inline">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="button"
+                                                                class="btn btn-outline-danger btn-sm btn-icon"
+                                                                onclick="confirmDelete(event, {{ $item->id_penyakit }})">
+                                                                <i class="fa-solid fa-fw fa-trash-can"></i>
+                                                            </button>
+                                                        </form>
+
+                                                    </td>
+                                                    <td>{{ $item->nama_penyakit }}</td>
+                                                    <td>{{ $item->kode_penyakit }}</td>
+                                                    {{-- <td>{{ $item->deskripsi }}</td> --}}
+                                                    <td>
+                                                        <a type="button" href="#" class="btn btn-outline-primary btn-sm btn-icon" data-bs-toggle="modal"
+                                                        data-bs-target="#deskripsi-{{ $item->id_penyakit }}">
+                                                            <i class="fa-solid fa-fw fa-eye"></i>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a type="button" href="#" class="btn btn-outline-primary btn-sm btn-icon" data-bs-toggle="modal"
+                                                        data-bs-target="#solusi-{{ $item->id_penyakit }}">
+                                                            <i class="fa-solid fa-fw fa-eye"></i>
+                                                        </a>
+                                                    </td>
+                                                    {{-- <td>{{ $item->solusi_penyakit }}</td> --}}
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -316,6 +329,66 @@
                             </button>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal modal-blur fade" id="deskripsi-{{ $item->id_penyakit }}" tabindex="-1" role="dialog"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="icon icon-tabler icon-tabler-brand-snowflake" width="44" height="44"
+                                viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M14 21v-5.5l4.5 2.5" />
+                                <path d="M10 21v-5.5l-4.5 2.5" />
+                                <path d="M3.5 14.5l4.5 -2.5l-4.5 -2.5" />
+                                <path d="M20.5 9.5l-4.5 2.5l4.5 2.5" />
+                                <path d="M10 3v5.5l-4.5 -2.5" />
+                                <path d="M14 3v5.5l4.5 -2.5" />
+                                <path d="M12 11l1 1l-1 1l-1 -1z" />
+                            </svg> Deskripsi Penyakit {{ $item->nama_penyakit }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>{{ $item->deskripsi }}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal"><i class="fa-solid fa-fw fa-arrow-rotate-left"></i> Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal modal-blur fade" id="solusi-{{ $item->id_penyakit }}" tabindex="-1" role="dialog"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="icon icon-tabler icon-tabler-brand-snowflake" width="44" height="44"
+                                viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M14 21v-5.5l4.5 2.5" />
+                                <path d="M10 21v-5.5l-4.5 2.5" />
+                                <path d="M3.5 14.5l4.5 -2.5l-4.5 -2.5" />
+                                <path d="M20.5 9.5l-4.5 2.5l4.5 2.5" />
+                                <path d="M10 3v5.5l-4.5 -2.5" />
+                                <path d="M14 3v5.5l4.5 -2.5" />
+                                <path d="M12 11l1 1l-1 1l-1 -1z" />
+                            </svg> Solusi Penyakit {{ $item->nama_penyakit }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>{{ $item->solusi_penyakit }}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal"><i class="fa-solid fa-fw fa-arrow-rotate-left"></i> Close</a>
+                    </div>
                 </div>
             </div>
         </div>

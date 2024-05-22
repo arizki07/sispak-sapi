@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id('id_penyakit');
             $table->string('kode_penyakit');
             $table->string('nama_penyakit');
-            $table->string('deskripsi');
-            $table->string('solusi_penyakit');
+            $table->text('deskripsi');
+            $table->text('solusi_penyakit');
             $table->timestamps();
         });
     }
