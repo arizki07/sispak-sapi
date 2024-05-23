@@ -10,12 +10,11 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="active " href="/">Home</a></li>
-                <li><a href="features.html">Features</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="login">
+                <li><a href="/">Home</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#informasi">Informasi</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+                {{-- <li><a href="login">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-password-user"
                             width="44" height="26" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                             fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -32,7 +31,7 @@
                             <path d="M9 6a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                             <path d="M7 14a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2" />
                         </svg>
-                        Login</a></li>
+                        Login</a></li> --}}
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->

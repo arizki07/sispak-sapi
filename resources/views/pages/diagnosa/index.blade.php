@@ -23,9 +23,9 @@
                 <div class="col-12 hero-text-image">
                     <div class="row">
                         <div class="col-lg-8 text-center text-lg-start">
-                            <h1 data-aos="fade-right">Sispak-Sapi</h1>
-                            <p class="mb-5" data-aos="fade-right" data-aos-delay="100">Sistem pakar dia gnosis penyakit
-                                pada sapi dengan menggunakan metode <i>Forward Chaining dan Certainty Factor berbasis
+                            <h1 data-aos="fade-right">Sistem Pakar Diagnosis Sapi Ternak</h1>
+                            <p class="mb-5" data-aos="fade-right" data-aos-delay="100">Sistem pakar diagnosis penyakit
+                                pada sapi ternak dengan menggunakan metode <i>Forward Chaining dan Certainty Factor berbasis
                                     web </i>.</p>
                             <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><a href="/mulai_diagnosa"
                                     class="btn btn-outline-white">Mulai Diagnosa</a></p>
@@ -41,84 +41,6 @@
         </div>
 
     </section><!-- End Hero -->
-    <!-- ======= Home Section ======= -->
-    <section class="section">
-        <div class="container">
-
-            <div class="row justify-content-center text-center mb-5">
-                <div class="col-md-5" data-aos="fade-up">
-                    <h2 class="section-heading">Save your time to using SoftLand</h2>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="">
-                    <div class="feature-1 text-center">
-                        <div class="wrap-icon icon-1">
-                            <i class="bi bi-people"></i>
-                        </div>
-                        <h3 class="mb-3">Explore Your Team</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-1 text-center">
-                        <div class="wrap-icon icon-1">
-                            <i class="bi bi-brightness-high"></i>
-                        </div>
-                        <h3 class="mb-3">Digital Whiteboard</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-1 text-center">
-                        <div class="wrap-icon icon-1">
-                            <i class="bi bi-bar-chart"></i>
-                        </div>
-                        <h3 class="mb-3">Design To Development</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="section">
-
-        <div class="container">
-            <div class="row justify-content-center text-center mb-5" data-aos="fade">
-                <div class="col-md-6 mb-5">
-                    <img src="landing/img/undraw_svg_1.svg" alt="Image" class="img-fluid">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="step">
-                        <span class="number">01</span>
-                        <h3>Sign Up</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="step">
-                        <span class="number">02</span>
-                        <h3>Create Profile</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="step">
-                        <span class="number">03</span>
-                        <h3>Enjoy the app</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
 
     <style>
         .text-justify {
@@ -126,7 +48,7 @@
         }
     </style>
 
-    <section class="section">
+    <section class="section" id="tentang">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-4 me-auto">
@@ -153,7 +75,7 @@
     </section>
 
     <!-- ======= Testimonials Section ======= -->
-    <section class="section border-top border-bottom">
+    <section class="section border-top border-bottom" id="informasi">
         <div class="container">
             <div class="row justify-content-center text-center mb-5">
                 <div class="col-md-4">
@@ -227,20 +149,76 @@
         </div>
     </section><!-- End Testimonials Section -->
 
-    <!-- ======= CTA Section ======= -->
-    <section class="section cta-section">
+
+    <section class="section" id="kontak">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 me-auto text-center text-md-start mb-5 mb-md-0">
-                    <h2>Starts Publishing Your Apps</h2>
-                </div>
-                <div class="col-md-5 text-center text-md-end">
-                    <p><a href="#" class="btn d-inline-flex align-items-center"><i
-                                class="bx bxl-apple"></i><span>App store</span></a> <a href="#"
-                            class="btn d-inline-flex align-items-center"><i class="bx bxl-play-store"></i><span>Google
-                                play</span></a></p>
-                </div>
+          <div class="row mb-5 align-items-end">
+            <div class="col-md-6" data-aos="fade-up">
+  
+              <h2>Kontak</h2>
+              <p class="mb-0">.</p>
             </div>
+  
+          </div>
+  
+          <div class="row">
+            <div class="col-md-4 ms-auto order-2" data-aos="fade-up">
+              <ul class="list-unstyled">
+                <li class="mb-3">
+                  <strong class="d-block mb-1">Alamat</strong>
+                  <span>Celancang, Kabupaten Cirebon, Jawa Barat</span>
+                </li>
+                <li class="mb-3">
+                  <strong class="d-block mb-1">No Telp</strong>
+                  <span>+62822 xxxx xxxx</span>
+                </li>
+                <li class="mb-3">
+                  <strong class="d-block mb-1">Email</strong>
+                  <span>mocrifkisebastian@gmail.com</span>
+                </li>
+                <li class="mb-3">
+                  <strong class="d-block mb-1">Github</strong>
+                  <span>@rifkisebastian</span>
+                </li>
+              </ul>
+            </div>
+  
+            <div class="col-md-6 mb-5 mb-md-0" data-aos="fade-up">
+              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+  
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control" id="name" readonly>
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label for="name">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" readonly>
+                  </div>
+                  <div class="col-md-12 form-group mt-3">
+                    <label for="name">Subject</label>
+                    <input type="text" class="form-control" name="subject" id="subject" readonly>
+                  </div>
+                  <div class="col-md-12 form-group mt-3">
+                    <label for="name">Message</label>
+                    <textarea class="form-control" name="message" readonly></textarea>
+                  </div>
+  
+                  <div class="col-md-12 mb-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                  </div>
+  
+                  <div class="col-md-6 form-group">
+                    <input type="submit" class="btn btn-primary d-block w-100" value="Send Message" disabled>
+                  </div>
+                </div>
+  
+              </form>
+            </div>
+  
+          </div>
         </div>
-    </section><!-- End CTA Section -->
+      </section>
 @endsection

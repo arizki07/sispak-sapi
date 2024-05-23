@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id('id_diagnosa_gejala');
             $table->unsignedBigInteger('id_diagnosa');
             $table->unsignedBigInteger('id_gejala');
+            $table->int('id_penyakit',);
+            $table->int('id_cf_user');
+            $table->float('cf_hasil');
+            $table->float('cf_pakar');
             $table->timestamps();
 
             // Definisikan foreign key untuk kolom id_diagnosa

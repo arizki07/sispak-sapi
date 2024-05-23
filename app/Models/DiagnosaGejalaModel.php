@@ -13,6 +13,10 @@ class DiagnosaGejalaModel extends Model
     protected $fillable = [
         'id_diagnosa',
         'id_gejala',
+        'id_penyakit',
+        'id_cf_user',
+        'cf_hasil',
+        'cf_pakar'
     ];
 
     public function gejala()

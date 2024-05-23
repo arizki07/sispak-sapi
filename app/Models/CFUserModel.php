@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class CFUserModel extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'id';
     protected $table = 'cf_user';
     protected $fillable = [
         'nama_nilai',
