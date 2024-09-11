@@ -195,41 +195,11 @@ class MulaiDiagnosaController extends Controller
 
         $diagnosaModel->cf = $nilaiPenyakitTerbesar;
         $diagnosaModel->presentase = number_format($nilaiPenyakitTerbesar * 100, 2);
-        
+
         $diagnosaModel->save();
         $idDiagnosa = $diagnosaModel->id_diagnosa;
-        
+
         $diagnosaGejala = [];
-        // foreach ($cf as $val) {
-        //     // dd($val);
-        //     $idDiagnosa = $diagnosaModel->id_diagnosa;
-        //     $cfUser = CFUserModel::where('nama_nilai', $val['cf'])->first();
-
-        //     if ($cfUser) { // Mengubah $cf menjadi $cfUser
-        //         $id_penyakit = $val['id_penyakit'];
-        //         $nilai_cf = '';
-
-        //         foreach ($anyar as $item) {
-        //             if ($item['id_penyakit'] == $id_penyakit) {
-        //                 $nilai_cf = $item['nilai_cf'];
-        //             }
-        //         }
-
-        //         if ($nilai_cf == 0) {
-        //             $nilai_cf = $val['nilai_cf'];
-        //         }
-
-        //         $diagnosaGejala[] = [
-        //             'id_diagnosa' => $idDiagnosa,
-        //             'id_gejala' => $val['id_gejala'],
-        //             'id_penyakit' => $id_penyakit,
-        //             'id_cf_user' => $cfUser['user'],
-        //             'cf_pakar' => $val['cf'],
-        //             'cf_hasil' => $nilai_cf,
-        //         ];
-        //         // dd($val); die;
-        //     }
-        // }
 
         foreach ($cf as $val) {
             // dd($val);
@@ -243,15 +213,11 @@ class MulaiDiagnosaController extends Controller
                 'cf_pakar' => $val['cf'],
             ];
         }
-        
-        // $diagnosaGejalaModel->insert($diagnosaGejala);
-        // $diagnosaGejalaModel->save($diagnosaGejala);
+
+
         $diagnosaGejalaModel->insert($diagnosaGejala);
 
-        // $diagnosaGejalaModel->insert($diagnosaGejala);
-        // if (!empty($diagnosaGejala)) {
-        //     $diagnosaGejalaModel->insertBatch($diagnosaGejala);
-        // }
+
 
         $resultDiagnosa = [
             'nama_user' => $username,
